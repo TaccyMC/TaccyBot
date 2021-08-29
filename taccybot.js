@@ -17,8 +17,7 @@ for (const file of eventFiles) {
 	}
 }
 
-// loading of commands
-
+// loading of command
 client.commands = new Collection()
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'))
 
@@ -28,12 +27,10 @@ for (const file of commandFiles) {
 }
 
 // command handling
-
 client.on('interactionCreate', async interaction => {
 	if (!interaction.isCommand()) return
 
 	const command = client.commands.get(interaction.commandName)
-
 	if (!command) return
 
 	await handleCommand(command, interaction)

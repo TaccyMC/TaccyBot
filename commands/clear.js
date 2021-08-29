@@ -24,10 +24,9 @@ module.exports = {
 		const content = 'Deleted ' + messages + ((messages > 1) ? ' messages' : ' message')
 
 		const embed = new MessageEmbed()
-			.setColor('#62BD35')
+			.setColor('#3ba55d')
 			.setTitle('Success')
 			.setDescription(content)
-			.setTimestamp()
 
 		await interaction.reply({ embeds: [embed], ephemeral: true })
 	},
