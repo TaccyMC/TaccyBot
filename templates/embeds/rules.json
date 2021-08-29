@@ -1,15 +1,43 @@
 {
   "title": "Rules",
   "description": "Here are the rules for ThumbTac's discord server!",
-  "color": 16752454,
+  "color": 8437864,
   "fields": [
     {
       "name": "Rule #1",
-      "value": "No discrimination of any kind such as racism or sexism"
+      "value": "No discrimination of any kind such as racism or sexism",
+      "inline": true
     },
     {
       "name": "Rule #2",
-      "value": "Don’t @ staff or the owner without permission"
+      "value": "Don’t @ staff or the owner without permission",
+      "inline": true
+    },
+    {
+      "name": "Rule #3",
+      "value": "Don't swear excessively or at others",
+      "inline": true
+    },
+    {
+      "name": "Rule #4",
+      "value": "No spamming or loud noises in vc, nsfw or graphic content",
+      "inline": true
+    },
+    {
+      "name": "Rule #5",
+      "value": "Never give out any personal information of anyone",
+      "inline": true
+    },
+    {
+      "name": "Rule #6",
+      "value": "Just use common sense",
+      "inline": true
     }
-  ]
+  ],
+  "footer": {
+    "text": "If you stick around, we'll assume you'v read the rules. Staff can punish people at any time for any reason as writing every single rule is impossible."
+  },
+  "thumbnail": {
+    "url": "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/apple/285/books_1f4da.png"
+  }
 }

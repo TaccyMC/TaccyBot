@@ -6,10 +6,11 @@ module.exports = {
 		const embed = getEmbedFromName('pronouns')
 		const buttons = new MessageActionRow()
 			.addComponents(
-				new MessageButton().setCustomId('he-him').setLabel('He/Him').setStyle('SUCCESS'),
-				new MessageButton().setCustomId('she-her').setLabel('She/Her').setStyle('SUCCESS'),
-				new MessageButton().setCustomId('they-their').setLabel('They/Them').setStyle('SUCCESS'),
-				new MessageButton().setCustomId('ask-me').setLabel('Ask Me').setStyle('SUCCESS'),
+				new MessageButton().setCustomId('pronoun-he').setLabel('He/Him').setStyle('SUCCESS'),
+				new MessageButton().setCustomId('pronoun-she').setLabel('She/Her').setStyle('SUCCESS'),
+				new MessageButton().setCustomId('pronoun-they').setLabel('They/Them').setStyle('SUCCESS'),
+				new MessageButton().setCustomId('pronoun-ask').setLabel('Ask Me').setStyle('SUCCESS'),
+				new MessageButton().setCustomId('pronoun-clear').setLabel('Clear').setStyle('DANGER'),
 			)
 		await interaction.channel.send({ embeds: [embed], components: [buttons] })
 	},
