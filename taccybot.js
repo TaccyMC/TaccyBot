@@ -1,7 +1,7 @@
 const fs = require('fs')
 const { Client, Collection, Intents } = require('discord.js')
 require('dotenv').config()
-const logger = require('./logger.js')
+const logger = require('./other/logger.js')
 
 const client = new Client({ intents: [Intents.FLAGS.GUILDS] })
 
