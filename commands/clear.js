@@ -14,7 +14,7 @@ module.exports = {
 			option.setName('channel')
 				.setDescription('The channel to clear messages from')
 				.setRequired(false)),
-	permissions: ['MANAGE_MESSAGES'],
+	roles: ['881529341534691338'],
 	async execute(interaction) {
 		const messages = interaction.options.getInteger('messages')
 		let channel = interaction.options.getChannel('channel')

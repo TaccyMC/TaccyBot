@@ -14,12 +14,14 @@ module.exports = {
 	data: new SlashCommandBuilder()
 		.setName('template')
 		.setDescription('Sends a template in the current channel')
+		.setDefaultPermission(false)
 		.addStringOption(option =>
 			option.setName('template')
 				.setDescription('The template you would like to execute')
 				.setRequired(true)
 				.addChoices(templates),
 		),
+	roles: ['881529341534691338'],
 	async execute(interaction) {
 		const name = interaction.options.getString('template')
 		const template = getTemplateFromName(name)

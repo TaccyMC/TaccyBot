@@ -1,3 +1,4 @@
+const fs = require('fs')
 require('dotenv').config()
 
 module.exports = {
@@ -8,19 +9,28 @@ module.exports = {
 			return
 		}
 
-		guild.commands.cache.forEach(command => {
-			console.log(command.name, command.defaultPermission)
+		const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'))
+
+		for (const file of commandFiles) {
+			const commandFile = require(`../commands/${file}`)
+			const commandName = file.replace('.js', '')
+			const command = guild.commands.cache.find(cmd => cmd.name === commandName)
+
 			if (!command.defaultPermission) {
-				console.log('2')
-				const permissions = [
-					{
-						id: '403366964669579266',
-						type: 'USER',
-						permission: true,
-					},
-				]
+				const roles = commandFile.roles
+				const permissions = []
+
+				for (const role of roles) {
+					permissions.push(
+						{
+							id: role,
+							type: 'ROLE',
+							permission: true,
+						})
+				}
+
 				command.permissions.set({ permissions })
 			}
-		})
+		}
 	},
 }

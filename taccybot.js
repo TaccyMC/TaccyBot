@@ -5,6 +5,9 @@ const logger = require('./other/logger.js')
 
 const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MEMBERS ] })
 
+const command_deployer = require('./other/command-deployer.js')
+command_deployer.deployCommands()
+
 // loading of events
 const eventFiles = fs.readdirSync('./events').filter(file => file.endsWith('.js'))
 
