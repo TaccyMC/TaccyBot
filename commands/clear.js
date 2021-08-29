@@ -5,6 +5,7 @@ module.exports = {
 	data: new SlashCommandBuilder()
 		.setName('clear')
 		.setDescription('Deletes messages in a channel')
+		.setDefaultPermission(false)
 		.addIntegerOption(option =>
 			option.setName('messages')
 				.setDescription('The amount of messages to clear')
@@ -13,6 +14,7 @@ module.exports = {
 			option.setName('channel')
 				.setDescription('The channel to clear messages from')
 				.setRequired(false)),
+	permissions: ['MANAGE_MESSAGES'],
 	async execute(interaction) {
 		const messages = interaction.options.getInteger('messages')
 		let channel = interaction.options.getChannel('channel')

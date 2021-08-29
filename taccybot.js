@@ -3,7 +3,7 @@ const { Client, Collection, Intents } = require('discord.js')
 require('dotenv').config()
 const logger = require('./other/logger.js')
 
-const client = new Client({ intents: [Intents.FLAGS.GUILDS] })
+const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MEMBERS ] })
 
 // loading of events
 const eventFiles = fs.readdirSync('./events').filter(file => file.endsWith('.js'))

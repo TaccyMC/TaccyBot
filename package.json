@@ -4,7 +4,8 @@
   "description": "",
   "main": "taccybot.js",
   "scripts": {
-    "start": "nodemon taccybot.js"
+    "dev": "nodemon taccybot.js",
+    "pm2": "pm2 start taccybot.js"
   },
   "author": "ThatsFinn",
   "license": "ISC",
