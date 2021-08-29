@@ -1,0 +1,15 @@
+{
+  "title": "Rules",
+  "description": "Here are the rules for ThumbTac's discord server!",
+  "color": 16752454,
+  "fields": [
+    {
+      "name": "Rule #1",
+      "value": "No discrimination of any kind such as racism or sexism"
+    },
+    {
+      "name": "Rule #2",
+      "value": "Don’t @ staff or the owner without permission"
+    }
+  ]
+}
