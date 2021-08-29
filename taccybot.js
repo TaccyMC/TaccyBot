@@ -36,13 +36,23 @@ client.on('interactionCreate', async interaction => {
 
 	if (!command) return
 
-	try {
-		await command.execute(interaction)
-	} catch (error) {
-		console.error(error)
-		const id = logger.writeError('commands', error)
-		await interaction.reply({ content: 'Sorry, we ran into an error! (ID: ' + id + ')', ephemeral: true })
-	}
+	await handleCommand(command, interaction)
 })
+
+async function handleCommand(command, interaction) {
+	const [err, data] = await catchErrorAsync(command.execute(interaction))
+	if (err) {
+		console.error(err)
+		const id = logger.writeError('commands', String(err))
+		await interaction.followUp({ content: 'Sorry, we ran into an error! (ID: ' + id + ')', ephemeral: true })
+	} else {
+		return data;
+	}
+}
+
+function catchErrorAsync(promise) {
+	return promise.then(data => [null, data])
+		.catch(err => [err])
+}
 
 client.login(process.env.TOKEN)
