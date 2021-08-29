@@ -3,13 +3,14 @@ const fs = require('fs')
 function writeError(prefix, error) {
 	const id = getRandom(1000, 9999)
 	const name = prefix + '_' + id
-	writeTextFile('./logs/errors/', name + id, error)
+	writeTextFile('./logs/errors/', name, error)
 	return id
 }
 
 function writeTextFile(directory, name, content) {
-	fs.writeFile(directory + name + '.txt', content, (error) => {
-		console.log(error)
+	fs.writeFile(directory + name + '.txt', content, () => {
+		// don't log errors for writing files
+		return
 	})
 }
 
