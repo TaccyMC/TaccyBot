@@ -10,7 +10,7 @@ module.exports = {
 				new MessageButton().setCustomId('pronoun-she').setLabel('She/Her').setStyle('SUCCESS'),
 				new MessageButton().setCustomId('pronoun-they').setLabel('They/Them').setStyle('SUCCESS'),
 				new MessageButton().setCustomId('pronoun-ask').setLabel('Ask Me').setStyle('SUCCESS'),
-				new MessageButton().setCustomId('pronoun-clear').setLabel('Clear').setStyle('DANGER'),
+				new MessageButton().setCustomId('pronoun-clear').setLabel('Clear').setStyle('SECONDARY'),
 			)
 		await interaction.channel.send({ embeds: [embed], components: [buttons] })
 	},
