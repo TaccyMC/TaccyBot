@@ -21,7 +21,7 @@ module.exports = {
 				.setRequired(true)
 				.addChoices(templates),
 		),
-	roles: ['840920746037739540'],
+	roles: ['840920746037739540', '881529341534691338'],
 	async execute(interaction) {
 		const name = interaction.options.getString('template')
 		const template = getTemplateFromName(name)

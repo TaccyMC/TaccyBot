@@ -6,6 +6,7 @@ const logger = require('./other/logger.js')
 const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MEMBERS ] })
 
 const command_deployer = require('./other/command-deployer.js')
+const { roleMention } = require('@discordjs/builders')
 command_deployer.deployCommands()
 
 // loading of events
@@ -35,6 +36,9 @@ client.on('interactionCreate', async interaction => {
 
 	const command = client.commands.get(interaction.commandName)
 	if (!command) return
+	if (command.roles !== undefined && !(interaction.member.roles.cache.some(role => command.roles.includes(role.id)))) {
+		interaction.reply('Insufficient permissions')
+	}
 
 	await handleCommand(command, interaction)
 })
