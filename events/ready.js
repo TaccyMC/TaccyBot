@@ -9,5 +9,6 @@ module.exports = {
 		console.log(`Logged in as ${client.user.tag}`)
 		client.user.setActivity('twitch.tv/ThumbTac_', { type: 'WATCHING' })
 		await permission_handler.deployPermissions(client)
+		process.send('ready')
 	},
 }
