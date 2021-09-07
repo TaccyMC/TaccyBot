@@ -10,7 +10,7 @@
     },
     {
       "name": "Rule #2",
-      "value": "Don’t @ staff or the owner without permission",
+      "value": "Keep the chat english only when possible",
       "inline": true
     },
     {
@@ -20,17 +20,17 @@
     },
     {
       "name": "Rule #4",
-      "value": "No spamming or loud noises in vc, nsfw or graphic content",
+      "value": "No spamming or loud noises in chat or vc",
       "inline": true
     },
     {
       "name": "Rule #5",
-      "value": "Never give out any personal information of anyone",
+      "value": "No nsfw or graphic content",
       "inline": true
     },
     {
       "name": "Rule #6",
-      "value": "Just use common sense",
+      "value": "Never give out any personal information of anyone",
       "inline": true
     }
   ],
